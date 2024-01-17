@@ -1,0 +1,156 @@
+@use "../../../styles/partials/variables" as *;
+@use "../../../styles/partials/mixins" as *;
+.header {
+  padding: 1rem;
+
+  @include tablet-and-desktop {
+    display: flex;
+    justify-content: flex-start;
+  }
+  @include desktop {
+  }
+
+  &__logo-wrap {
+    text-align: center;
+    margin: 0.7rem 0;
+    @include tablet-and-desktop {
+    }
+    @include desktop {
+    }
+  }
+
+  &__logo {
+    max-height: 1.5625rem;
+    max-width: 7.5rem;
+    text-align: center;
+    @include tablet-and-desktop {
+    }
+    @include desktop {
+    }
+  }
+
+  &__search-bar {
+    display: flex;
+    margin: 1rem 0;
+    @include tablet-and-desktop {
+      display: block;
+      margin: 0 1.5rem 0 5rem;
+    }
+    @include desktop {
+    }
+  }
+
+  &__input {
+    position: relative;
+    display: inline-block;
+    padding: 0.6rem 0 0.6rem 2.5rem;
+    border-radius: 0.25rem;
+    background-color: $secondary-alabaster;
+    border: 2px solid $secondary-mercury;
+
+    @include tablet-and-desktop {
+      padding: 0.7rem 3rem;
+    }
+    @include desktop {
+    }
+  }
+
+  &__search-icon-wrap {
+    position: absolute;
+    left: 12%;
+    top: 11.5%;
+    @include tablet-and-desktop {
+      left: 30.5%;
+      top: 3.2%;
+    }
+    @include desktop {
+    }
+  }
+
+  &__search-icon {
+    @include tablet-and-desktop {
+    }
+    @include desktop {
+    }
+  }
+
+  &__avatar-wrap {
+    margin-left: 1rem;
+    @include tablet-and-desktop {
+      position: absolute;
+      right: 7%;
+      top: 2%;
+    }
+    @include desktop {
+    }
+  }
+
+  &__avatar {
+    width: 2.25rem;
+    height: 2.25rem;
+    border-radius: 50%;
+    @include tablet-and-desktop {
+      width: 3rem;
+      height: 3rem;
+    }
+    @include desktop {
+    }
+  }
+
+  &__btn-wrap {
+    @include tablet-and-desktop {
+    }
+    @include desktop {
+    }
+  }
+
+  &__btn {
+    width: 100%;
+    height: 2.5rem;
+    padding: 0 2rem;
+    text-align: center;
+    position: relative;
+    border: none;
+    border-radius: 0.25rem;
+    color: $primary-white;
+    background-color: $primary-blue;
+    font-weight: $text-regular;
+    @include mobile-lable-button;
+
+    &:hover {
+      background-color: $secondary-darkblue;
+    }
+
+    @include tablet-and-desktop {
+      width: 50%;
+      min-width: 9.375rem;
+      @include tabdesk-btn;
+    }
+    @include desktop {
+    }
+  }
+
+  &__btn-icon-wrap {
+    @include tablet-and-desktop {
+    }
+    @include desktop {
+    }
+  }
+
+  &__btn-icon {
+    position: absolute;
+    top: 15%;
+    left: 12%;
+    @include tablet-and-desktop {
+    }
+    @include desktop {
+    }
+  }
+}
+
+// &__ {
+//   @include tablet-and-desktop {
+//   }
+//   @include desktop {
+//   }
+// }

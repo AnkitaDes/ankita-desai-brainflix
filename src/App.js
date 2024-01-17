@@ -1,7 +1,6 @@
-import "./App.css";
+import "./App.scss";
+import Header from "./components/Component/Header/Header";
 
-function App() {
-  return <div className="App"></div>;
+export function App() {
+  return <Header />;
 }
-
-export default App;

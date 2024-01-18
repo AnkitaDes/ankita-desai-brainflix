@@ -15,10 +15,6 @@
   &__logo-wrap {
     text-align: center;
     margin: 0.7rem 0;
-    @include tablet-and-desktop {
-    }
-    @include desktop {
-    }
   }
 
   &__logo {
@@ -27,8 +23,6 @@
     text-align: center;
     @include tablet-and-desktop {
       margin-left: 1.5rem;
-    }
-    @include desktop {
     }
   }
 
@@ -56,26 +50,6 @@
     background-repeat: no-repeat;
     background-position: left;
     background-position-x: 1rem;
-
-    @include tablet-and-desktop {
-    }
-    @include desktop {
-    }
-  }
-
-  &__search-icon-wrap {
-    // background-position-x: 0.5rem;
-    @include tablet-and-desktop {
-    }
-    @include desktop {
-    }
-  }
-
-  &__search-icon {
-    @include tablet-and-desktop {
-    }
-    @include desktop {
-    }
   }
 
   &__avatar-wrap {
@@ -97,15 +71,6 @@
     @include tablet-and-desktop {
       width: 3rem;
       height: 3rem;
-    }
-    @include desktop {
-    }
-  }
-
-  &__btn-wrap {
-    @include tablet-and-desktop {
-    }
-    @include desktop {
     }
   }
 
@@ -134,31 +99,11 @@
       width: 50%;
       min-width: 9.375rem;
     }
-    @include desktop {
-    }
-  }
-
-  &__btn-icon-wrap {
-    @include tablet-and-desktop {
-    }
-    @include desktop {
-    }
   }
 
   &__btn-icon {
     position: absolute;
     top: 15%;
     left: 12%;
-    @include tablet-and-desktop {
-    }
-    @include desktop {
-    }
   }
 }
-
-// &__ {
-//   @include tablet-and-desktop {
-//   }
-//   @include desktop {
-//   }
-// }

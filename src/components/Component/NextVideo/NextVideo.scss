@@ -1,0 +1,49 @@
+@use "../../../styles/partials/variables" as *;
+@use "../../../styles/partials/mixins" as *;
+@use "../../../styles/partials/typography" as *;
+
+.next-video {
+  @include mobile-body;
+  color: $primary-silver;
+  margin-left: 1rem;
+  font-weight: $text-bold;
+  @include tablet-and-desktop {
+    width: 30%;
+  }
+
+  &__list {
+    padding: 0;
+  }
+
+  &__item {
+    display: flex;
+    justify-content: flex-start;
+    list-style-type: none;
+    margin: 1rem;
+  }
+
+  &__img {
+    aspect-ratio: 16/9;
+    width: 8rem;
+    height: 5rem;
+    border-radius: 0.25rem;
+  }
+
+  &__title {
+    @include mobile-body;
+    font-weight: $text-bold;
+    font-size: 0.75rem;
+    margin: 0 0 0 1rem;
+    color: $primary-black;
+    @include tablet-and-desktop {
+      @include tabdesk-body;
+      font-weight: $text-bold;
+    }
+  }
+
+  &__channel {
+    @include mobile-body;
+    margin: 0.3rem 0 0 1rem;
+    color: $primary-black;
+  }
+}

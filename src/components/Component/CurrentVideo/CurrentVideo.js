@@ -1,7 +1,7 @@
-function CurrentVideo({ video }) {
+function CurrentVideo({ selectedVideo }) {
   return (
-    <div key={video.id} className="current__video">
-      <video controls poster={video.image}></video>
+    <div key={selectedVideo.id}>
+      <video className="video" controls poster={selectedVideo.image}></video>
     </div>
   );
 }

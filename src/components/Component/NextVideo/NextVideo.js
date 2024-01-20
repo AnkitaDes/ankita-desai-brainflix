@@ -1,5 +1,6 @@
 import "./NextVideo.scss";
-function NextVideo({ videos, onVideoSelect }) {
+function NextVideo({ videos, selectVideo }) {
+  console.log(videos, selectVideo);
   return (
     <div className="next-video">
       <p className="next-video__header">NEXT VIDEOS</p>
@@ -8,7 +9,7 @@ function NextVideo({ videos, onVideoSelect }) {
           <li
             className="next-video__item"
             key={video.id}
-            onClick={() => onVideoSelect(video)}
+            onClick={() => selectVideo(video.id)}
           >
             <img
               className="next-video__img"

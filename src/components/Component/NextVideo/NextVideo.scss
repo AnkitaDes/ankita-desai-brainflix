@@ -1,14 +1,13 @@
 @use "../../../styles/partials/variables" as *;
 @use "../../../styles/partials/mixins" as *;
 @use "../../../styles/partials/typography" as *;
-
+@use "../../../styles/partials/global" as *;
 .next-video {
   @include mobile-body;
   color: $primary-silver;
   margin-left: 1rem;
   font-weight: $text-bold;
   @include tablet-and-desktop {
-    width: 30%;
   }
 
   &__list {

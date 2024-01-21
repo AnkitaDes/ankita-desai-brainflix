@@ -13,7 +13,7 @@ export function App() {
   //console.log(nextVideos);
 
   const [selectedVideo, setSelectedVideo] = useState(videoDetailsData[0]);
-  //console.log(selectedVideo);
+  console.log(selectedVideo);
 
   const handleSelectedVideo = (clickedId) => {
     const foundVideo = videoDetailsData.find((video) => clickedId === video.id);
@@ -21,9 +21,9 @@ export function App() {
   };
 
   const sideVideos = nextVideos.filter(
-    (video) => video.id !== selectedVideo.Id
+    (video) => video.id !== selectedVideo.id
   );
-  //console.log(sideVideos);
+  console.log(sideVideos);
   return (
     <>
       <Header />
@@ -33,12 +33,4 @@ export function App() {
       <NextVideo videos={sideVideos} selectVideo={handleSelectedVideo} />
     </>
   );
-
-  // const foundVideo = videoDetailsData.find(())
-
-  // const mainVideoId = currentVideo.id;
-  // console.log(currentVideo.id);
-
-  // const mainVideoData = videoData.filter((video) => video.id === mainVideoId);
-  // console.log(mainVideoData);
 }

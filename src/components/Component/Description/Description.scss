@@ -1,0 +1,98 @@
+@use "../../../styles/partials/variables" as *;
+@use "../../../styles/partials/mixins" as *;
+@use "../../../styles/partials/typography" as *;
+@use "../../../styles/partials/global" as *;
+
+.details {
+  margin: 1rem;
+
+  @include tablet-and-desktop {
+    margin: 2rem;
+  }
+
+  &__title-wrap {
+    border-bottom: 1px solid $secondary-mercury;
+    @include tablet-and-desktop {
+    }
+    @include desktop {
+    }
+  }
+
+  &__title {
+    @include mobile-header;
+    @include tablet-and-desktop {
+      @include tabdesk-header;
+    }
+  }
+
+  &__container {
+    @include mobile-body;
+    display: flex;
+    border-bottom: 1px solid $secondary-mercury;
+
+    @include tablet-and-desktop {
+      @include tabdesk-body;
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+
+  &__channel {
+    font-weight: $text-bold;
+
+    @include tablet-and-desktop {
+      font-weight: $text-bold;
+    }
+  }
+
+  &__views-icon-wrap {
+    display: flex;
+  }
+
+  &__views-icon {
+    padding-right: 0.5rem;
+  }
+
+  &__channel-date-wrap {
+    @include tablet-and-desktop {
+      display: flex;
+    }
+  }
+
+  &__likes-icon-wrap {
+    display: flex;
+    @include tablet-and-desktop {
+      padding-left: 3rem;
+    }
+  }
+
+  &__likes {
+    margin-top: 0.5rem;
+    color: $primary-silver;
+    @include tablet-and-desktop {
+      margin-top: 1rem;
+    }
+  }
+
+  &__views {
+    color: $primary-silver;
+  }
+
+  &__likes-icon {
+    padding-right: 0.5rem;
+  }
+
+  &__views-likes-wrap {
+    padding-left: 7rem;
+    @include tablet-and-desktop {
+      display: flex;
+    }
+  }
+
+  &__date {
+    color: $primary-silver;
+    @include tablet-and-desktop {
+      padding-left: 3rem;
+    }
+  }
+}

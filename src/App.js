@@ -6,6 +6,7 @@ import videoDetailsData from "./data/video-details.json";
 import CurrentVideo from "./components/Component/CurrentVideo/CurrentVideo";
 import NextVideo from "./components/Component/NextVideo/NextVideo";
 import Description from "./components/Component/Description/Description";
+import Comments from "./components/Component/Comments/Comments";
 
 export function App() {
   const [nextVideos, setNextVideos] = useState(videosData);
@@ -28,6 +29,7 @@ export function App() {
       <Header />
       <CurrentVideo selectedVideo={selectedVideo} />
       <Description detail={selectedVideo} />
+      <Comments selectedComments={selectedVideo} />
       <NextVideo videos={sideVideos} selectVideo={handleSelectedVideo} />
     </>
   );

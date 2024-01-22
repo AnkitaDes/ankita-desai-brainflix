@@ -3,20 +3,19 @@ import avatar from "../../../assets/images/Mohan-muruge.jpg";
 function Comments({ selectedComments }) {
   console.log(selectedComments);
   const comments = selectedComments?.comments || [];
-  console.log(comments.length);
 
   return (
     <div className="comments">
       <p className="comments__num">{comments.length} Comments</p>
-      <div className="comments__form">
+      <form className="comments__form">
         <h2 className="comments__title">JOIN THE CONVERSATION</h2>
-      </div>
+      </form>
       <div className="comments__avatar-input-wrap">
         <div className="comments__avatar-wrap">
           <img className="comments__avatar" src={avatar} alt="avatar-pic" />
         </div>
         <div className="comments__input-btn-wrap">
-          <div className="comments__search-bar">
+          <div className="comments__input-wrap">
             <input
               type="text"
               placeholder="Add a new comment"
@@ -31,7 +30,6 @@ function Comments({ selectedComments }) {
           </div>
         </div>
       </div>
-
       <div className="comments__list">
         {comments.map((comment) => (
           <div key={comment.id} className="comments__container">

@@ -6,7 +6,9 @@ function CurrentVideo({ selectedVideo }) {
         className="video__img"
         controls
         poster={selectedVideo.image}
+        src={selectedVideo.video}
       ></video>
+      <div className="video__controls"></div>
     </div>
   );
 }

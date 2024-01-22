@@ -4,7 +4,28 @@ import likesIcon from "../../../assets/images/icons/likes.svg";
 
 function Description({ detail }) {
   console.log(detail);
-  const timestampDate = new Date(detail.timestamp);
+  const time = detail.timestamp;
+  function timeAgo(time) {
+    const currentDate = new Date();
+    const commentDate = new Date(time);
+
+    const timeDifference = currentDate - commentDate;
+    const seconds = Math.floor(timeDifference / 1000);
+    const minutes = Math.floor(seconds / 60);
+    const hours = Math.floor(minutes / 60);
+    const days = Math.floor(hours / 24);
+
+    if (days > 0) {
+      return `${days} ${days === 1 ? "day" : "days"} ago`;
+    } else if (hours > 0) {
+      return `${hours} ${hours === 1 ? "hour" : "hours"} ago`;
+    } else if (minutes > 0) {
+      return `${minutes} ${minutes === 1 ? "minute" : "minutes"} ago`;
+    } else {
+      return `${seconds} ${seconds === 1 ? "second" : "seconds"} ago`;
+    }
+  }
+
   return (
     <div className="details" key={detail.id}>
       <div className="details__title-wrap">
@@ -13,7 +34,7 @@ function Description({ detail }) {
       <div className="details__container">
         <div className="details__channel-date-wrap">
           <p className="details__channel">By {detail.channel}</p>
-          <p className="details__date">{timestampDate.toLocaleDateString()}</p>
+          <p className="details__date">{timeAgo(detail.timestamp)}</p>
         </div>
         <div className="details__views-likes-wrap">
           <div className="details__views-icon-wrap">

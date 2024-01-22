@@ -4,29 +4,31 @@
 @use "../../../styles/partials/global" as *;
 
 .details {
-  margin: 1rem;
-
+  margin: 1.5rem 1rem 1rem 1rem;
   @include tablet-and-desktop {
-    margin: 2rem;
+    margin: 2.25rem 3rem;
   }
-
-  &__title-wrap {
-    border-bottom: 1px solid $secondary-mercury;
-    @include tablet-and-desktop {
-    }
-    @include desktop {
-    }
+  @include desktop {
+    margin-right: 0;
+    margin-left: 5rem;
   }
 
   &__title {
     @include mobile-header;
+    margin-bottom: 0;
     @include tablet-and-desktop {
       @include tabdesk-header;
+      margin-bottom: 0;
+      margin-top: 0;
+    }
+    @include desktop {
+      padding-right: 2rem;
     }
   }
 
   &__container {
     @include mobile-body;
+    margin-top: 0.18rem;
     display: flex;
     border-bottom: 1px solid $secondary-mercury;
 
@@ -87,12 +89,27 @@
     @include tablet-and-desktop {
       display: flex;
     }
+    @include desktop {
+      padding-right: 2rem;
+    }
   }
 
   &__date {
     color: $primary-silver;
     @include tablet-and-desktop {
       padding-left: 3rem;
+    }
+  }
+
+  &__description {
+    @include mobile-body;
+
+    @include tablet-and-desktop {
+      @include tabdesk-body;
+      padding-right: 1rem;
+    }
+    @include desktop {
+      padding-right: 1.5rem;
     }
   }
 }

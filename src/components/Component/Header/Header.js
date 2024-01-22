@@ -10,9 +10,7 @@ export default function Header() {
       </div>
       <div className="header__search-bar">
         <input type="text" placeholder="Search" className="header__input" />
-        <span className="header__search-icon-wrap">
-          {/* <img className="header__search-icon" src={search} alt="search-icon" /> */}
-        </span>
+        <span className="header__search-icon-wrap"></span>
         <div className="header__avatar-wrap">
           <img className="header__avatar" src={avatar} alt="avatar-pic" />
         </div>

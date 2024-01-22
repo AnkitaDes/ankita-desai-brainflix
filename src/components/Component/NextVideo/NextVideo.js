@@ -11,11 +11,13 @@ function NextVideo({ videos, selectVideo }) {
             key={video.id}
             onClick={() => selectVideo(video.id)}
           >
-            <img
-              className="next-video__img"
-              src={video.image}
-              alt={video.title}
-            />
+            <div className="next-video__img-container">
+              <img
+                className="next-video__img"
+                src={video.image}
+                alt={video.title}
+              />
+            </div>
             <div className="video__wrap">
               <p className="next-video__title">{video.title}</p>
               <p className="next-video__channel">{video.channel}</p>

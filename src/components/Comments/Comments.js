@@ -1,5 +1,5 @@
 import "./Comments.scss";
-import avatar from "../../../assets/images/Mohan-muruge.jpg";
+import avatar from "../../assets/images/Mohan-muruge.jpg";
 function Comments({ selectedComments }) {
   console.log(selectedComments);
   const comments = selectedComments?.comments || [];

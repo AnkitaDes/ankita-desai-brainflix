@@ -1,6 +1,6 @@
 import "./Description.scss";
-import viewsIcon from "../../../assets/images/icons/views.svg";
-import likesIcon from "../../../assets/images/icons/likes.svg";
+import viewsIcon from "../../assets/images/icons/views.svg";
+import likesIcon from "../../assets/images/icons/likes.svg";
 
 function Description({ detail }) {
   console.log(detail);

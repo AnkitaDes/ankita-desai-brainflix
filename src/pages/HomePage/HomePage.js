@@ -2,62 +2,76 @@ import CurrentVideo from "../../components/CurrentVideo/CurrentVideo";
 import NextVideo from "../../components/NextVideo/NextVideo";
 import Description from "../../components/Description/Description";
 import Comments from "../../components/Comments/Comments";
-
 import { useState, useEffect } from "react";
 import axios from "axios";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
+import "./HomePage.scss";
 
-export default function Home() {
+export default function HomePage() {
   const apiKey = "9755b879-c57d-4204-b1a1-6d3e0427929b";
-
   const [nextVideos, setNextVideos] = useState([]);
+  const [selectedVideo, setSelectedVideo] = useState({});
+  const { videoId } = useParams();
+  const navigate = useNavigate();
+
   const fetchVideos = async () => {
     try {
       const response = await axios.get(
         `https://project-2-api.herokuapp.com/videos/?api_key=${apiKey}`
       );
-      const videosData = response.data;
-      console.log(videosData);
-      setNextVideos(videosData);
+      setNextVideos(response.data);
     } catch (error) {
-      console.log(error);
+      console.error("Error fetching videos:", error);
     }
   };
 
-  useEffect(() => {
-    fetchVideos();
-  }, []);
-
-  const [selectedVideo, setSelectedVideo] = useState({});
-  const { videoId } = useParams();
-
-  const fetchVideo = async () => {
+  const fetchVideoDetails = async (id) => {
     try {
       const response = await axios.get(
-        `https://project-2-api.herokuapp.com/videos/${videoId}?api_key=${apiKey}`
+        `https://project-2-api.herokuapp.com/videos/${id}?api_key=${apiKey}`
       );
-      const videoDetailsData = response.data;
-      console.log(videoDetailsData.id);
-      setSelectedVideo(videoDetailsData);
+      return response.data;
     } catch (error) {
-      console.log(error);
+      console.error("Error fetching video details:", error);
     }
   };
+
   useEffect(() => {
-    fetchVideo();
-  }, [videoId]);
+    const fetchData = async () => {
+      try {
+        await fetchVideos();
+
+        let videoToLoad;
+
+        if (videoId) {
+          videoToLoad = await fetchVideoDetails(videoId);
+        } else if (nextVideos.length > 0) {
+          videoToLoad = await fetchVideoDetails(nextVideos[0].id);
+        }
+
+        if (videoToLoad) {
+          setSelectedVideo(videoToLoad);
+        }
+      } catch (error) {
+        console.log("Error fetching data:", error);
+      }
+    };
+
+    fetchData();
+  }, [videoId, nextVideos]);
 
   const handleSelectedVideo = (clickedId) => {
     const foundVideo = nextVideos.find((video) => clickedId === video.id);
     setSelectedVideo(foundVideo);
+    navigate(`/videos/${clickedId}`);
   };
-
   const sideVideos = nextVideos.filter(
     (video) => video.id !== selectedVideo.id
   );
-  console.log(sideVideos);
+  //console.log(sideVideos);
+
   return (
-    <div className="home">
+    <main className="home">
       <CurrentVideo
         className="app__current-video"
         selectedVideo={selectedVideo}
@@ -76,6 +90,6 @@ export default function Home() {
           selectVideo={handleSelectedVideo}
         />
       </div>
-    </div>
+    </main>
   );
 }

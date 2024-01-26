@@ -1,8 +1,8 @@
 import "./NextVideo.scss";
 function NextVideo({ videos, selectVideo }) {
-  console.log(videos, selectVideo);
+  //console.log(videos, selectVideo);
   return (
-    <div className="next-video">
+    <section className="next-video">
       <p className="next-video__header">NEXT VIDEOS</p>
       <ul className="next-video__list">
         {videos.map((video) => (
@@ -25,7 +25,7 @@ function NextVideo({ videos, selectVideo }) {
           </li>
         ))}
       </ul>
-    </div>
+    </section>
   );
 }
 

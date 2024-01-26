@@ -1,11 +1,21 @@
 import "./Comments.scss";
 import avatar from "../../assets/images/Mohan-muruge.jpg";
+import { useEffect, useState } from "react";
 function Comments({ selectedComments }) {
-  console.log(selectedComments);
-  const comments = selectedComments?.comments || [];
+  //console.log("selectedComments:", selectedComments);
+
+  const [comments, setComments] = useState([]);
+
+  useEffect(() => {
+    if (selectedComments && selectedComments.comments) {
+      setComments(selectedComments.comments);
+    } else if (selectedComments && selectedComments[0]?.comments) {
+      setComments(selectedComments[0].comments);
+    }
+  }, [selectedComments]);
 
   return (
-    <div className="comments">
+    <section className="comments">
       <p className="comments__num">{comments.length} Comments</p>
       <form className="comments__form">
         <h2 className="comments__title">JOIN THE CONVERSATION</h2>
@@ -44,7 +54,7 @@ function Comments({ selectedComments }) {
           </div>
         ))}
       </div>
-    </div>
+    </section>
   );
 }
 

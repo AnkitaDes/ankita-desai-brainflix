@@ -1,0 +1,228 @@
+@use "../../styles/partials/global" as *;
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/typography" as *;
+
+.upload {
+  border-top: 1px solid $secondary-mercury;
+  padding: 1rem;
+  @include tablet-and-desktop {
+    padding: 0 5rem;
+  }
+  @include desktop {
+    padding: 0 7rem;
+  }
+
+  &__form {
+    @include tablet-and-desktop {
+      border-top: 1px solid $secondary-mercury;
+    }
+  }
+  &__title {
+    margin: 0.5rem 0;
+    @include mobile-header;
+    color: $primary-black;
+    @include tablet-and-desktop {
+      @include tabdesk-header;
+      margin: 1.5rem 0;
+    }
+  }
+
+  &__img-details-wrap {
+    @include tablet-and-desktop {
+      display: flex;
+      // justify-content: flex-start;
+      gap: 1.5rem;
+      padding-bottom: 1.5rem;
+      border-bottom: 1px solid $secondary-mercury;
+    }
+  }
+
+  &__subtitle {
+    @include mobile-body;
+    color: $primary-silver;
+    font-weight: $text-demi;
+    margin-bottom: 0.5rem;
+    @include tablet-and-desktop {
+      @include tabdesk-body;
+      font-weight: $text-demi;
+    }
+    @include desktop {
+      margin-top: 1rem;
+    }
+  }
+
+  &__details-title {
+    @include mobile-body;
+    color: $primary-silver;
+    font-weight: $text-demi;
+    margin-bottom: 0.5rem;
+    @include tablet-and-desktop {
+      @include tabdesk-body;
+      font-weight: $text-demi;
+    }
+    @include desktop {
+      margin-top: 1rem;
+    }
+  }
+
+  &__details-description {
+    @include mobile-body;
+    color: $primary-silver;
+    font-weight: $text-demi;
+    margin-bottom: 0.5rem;
+    @include tablet-and-desktop {
+      @include tabdesk-body;
+      font-weight: $text-demi;
+    }
+    @include desktop {
+      margin-top: 1rem;
+    }
+  }
+
+  &__subtitle-img-wrap {
+    @include tablet-and-desktop {
+      width: 40%;
+    }
+  }
+
+  &__img {
+    width: 100%;
+    height: 100%;
+    border-radius: 4px;
+    background-color: $secondary-mercury;
+    margin-bottom: 1rem;
+    @include tablet-and-desktop {
+      margin-bottom: 0;
+    }
+  }
+
+  &__details-wrap {
+    @include tablet-and-desktop {
+      padding-top: 1rem;
+      width: 60%;
+    }
+    @include desktop {
+      padding-top: 1.5rem;
+    }
+  }
+  &__title-input {
+    width: 100%;
+    padding: 0.5rem 1rem;
+    border-radius: 0.25rem;
+    background-color: $secondary-alabaster;
+    border: 1px solid $secondary-mercury;
+    margin-top: 0.2rem;
+    margin-bottom: 1.3rem;
+    @include tablet-and-desktop {
+      height: 2rem;
+      margin-bottom: 1.3rem;
+      margin-top: 0.3rem;
+      @include tabdesk-body;
+    }
+    @include desktop {
+      height: 3rem;
+      margin-top: 0.5rem;
+      margin-bottom: 2rem;
+    }
+  }
+
+  &__details-input {
+    padding: 1rem;
+    padding-bottom: 6rem;
+    background-color: $secondary-alabaster;
+    width: 100%;
+    height: 6rem;
+    border-radius: 0.25rem;
+    border: 1px solid $secondary-mercury;
+    margin-bottom: 2rem;
+    margin-top: 0.2rem;
+    @include tablet-and-desktop {
+      padding: 1rem;
+      height: 3rem;
+      margin-bottom: 0;
+      margin-top: 0.3rem;
+      @include tabdesk-body;
+    }
+    @include desktop {
+      height: 6.7rem;
+      margin-top: 0.5rem;
+    }
+
+    &:active {
+      border: 2px solid $primary-blue;
+    }
+  }
+
+  &__cancel-btn-wrap {
+    text-align: center;
+    @include tablet-and-desktop {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 2rem;
+    }
+  }
+
+  &__btn {
+    width: 100%;
+    height: 2.5rem;
+    padding: 0 2rem;
+    @include mobile-lable-button;
+    text-align: center;
+    position: relative;
+    border: none;
+    border-radius: 0.25rem;
+    color: $primary-white;
+    background-color: $primary-blue;
+    font-weight: $text-regular;
+    font-size: 0.75rem;
+    background-image: url("../../assets/images/icons/publish.svg");
+    background-repeat: no-repeat;
+    background-position: left;
+    background-position-x: 1rem;
+
+    &:hover {
+      background-color: $secondary-darkblue;
+    }
+
+    @include tablet-and-desktop {
+      width: 9.3rem;
+      margin-top: 1.7rem;
+      @include tabdesk-btn;
+    }
+  }
+
+  &__btn-icon {
+    position: absolute;
+    top: 15%;
+    left: 12%;
+  }
+
+  &__cancel-tabdesk {
+    @include mobile-body;
+    color: $primary-blue;
+    font-weight: $text-demi;
+    display: none;
+    @include tablet-and-desktop {
+      display: block;
+      margin-top: 2.5rem;
+      @include tabdesk-body;
+      font-weight: $text-demi;
+    }
+  }
+
+  &__cancel-mobile {
+    @include mobile-body;
+    color: $primary-blue;
+    font-weight: $text-demi;
+    margin: 2rem;
+    @include tablet-and-desktop {
+      display: none;
+    }
+  }
+
+  &__link {
+    text-decoration: none;
+  }
+}

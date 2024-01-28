@@ -1,28 +1,30 @@
+import { Link } from "react-router-dom";
 import "./NextVideo.scss";
-function NextVideo({ videos, selectVideo }) {
-  //console.log(videos, selectVideo);
+function NextVideo({ videos }) {
   return (
     <section className="next-video">
       <p className="next-video__header">NEXT VIDEOS</p>
       <ul className="next-video__list">
         {videos.map((video) => (
-          <li
-            className="next-video__item"
+          <Link
+            to={`/videos/${video.id}`}
+            className="next-video__link"
             key={video.id}
-            onClick={() => selectVideo(video.id)}
           >
-            <div className="next-video__img-container">
-              <img
-                className="next-video__img"
-                src={video.image}
-                alt={video.title}
-              />
-            </div>
-            <div className="video__wrap">
-              <p className="next-video__title">{video.title}</p>
-              <p className="next-video__channel">{video.channel}</p>
-            </div>
-          </li>
+            <li className="next-video__item">
+              <div className="next-video__img-container">
+                <img
+                  className="next-video__img"
+                  src={video.image}
+                  alt={video.title}
+                />
+              </div>
+              <div className="video__wrap">
+                <p className="next-video__title">{video.title}</p>
+                <p className="next-video__channel">{video.channel}</p>
+              </div>
+            </li>
+          </Link>
         ))}
       </ul>
     </section>

@@ -29,7 +29,7 @@ export default function Header() {
             </div>
           </li>
           <li className="header__item">
-            <Link to="/videouploadpage">
+            <Link to="/upload">
               <div className="header__btn-wrap">
                 <button className="header__btn">
                   UPLOAD

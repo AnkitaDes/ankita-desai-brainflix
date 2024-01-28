@@ -7,18 +7,18 @@ import HomePage from "./pages/HomePage/HomePage";
 
 export function App() {
   return (
-    <>
+    <div className="app">
       <BrowserRouter>
         <Header />
         <main>
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="/videos/:videoId" element={<HomePage />} />
-            <Route path="/videouploadpage" element={<VideoUploadPage />} />
+            <Route path="/upload" element={<VideoUploadPage />} />
             <Route path="*" element={<NotFoundPage />} />
           </Routes>
         </main>
       </BrowserRouter>
-    </>
+    </div>
   );
 }

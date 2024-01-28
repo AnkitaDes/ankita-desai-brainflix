@@ -19,6 +19,10 @@
     padding-left: 1rem;
   }
 
+  &__link {
+    text-decoration: none;
+  }
+
   &__list {
     padding: 0;
     @include desktop {

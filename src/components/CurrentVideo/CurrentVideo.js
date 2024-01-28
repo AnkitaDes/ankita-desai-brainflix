@@ -1,5 +1,5 @@
 import "./CurrentVideo.scss";
-function CurrentVideo({ selectedVideo }) {
+export default function CurrentVideo({ selectedVideo }) {
   return (
     <section key={selectedVideo.id} className="video">
       <video
@@ -12,5 +12,3 @@ function CurrentVideo({ selectedVideo }) {
     </section>
   );
 }
-
-export default CurrentVideo;

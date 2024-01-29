@@ -26,7 +26,7 @@ function Description({ detail }) {
   }
 
   return (
-    <div className="details" key={detail.id}>
+    <section className="details" key={detail.id}>
       <div className="details__title-wrap">
         <h1 className="details__title">{detail.title}</h1>
       </div>
@@ -49,7 +49,7 @@ function Description({ detail }) {
       <div className="details__description-wrap">
         <p className="details__description">{detail.description}</p>
       </div>
-    </div>
+    </section>
   );
 }
 

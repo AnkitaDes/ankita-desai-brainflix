@@ -2,7 +2,7 @@ import "./Description.scss";
 import viewsIcon from "../../assets/images/icons/views.svg";
 import likesIcon from "../../assets/images/icons/likes.svg";
 
-function Description({ detail }) {
+export default function Description({ detail }) {
   const time = detail.timestamp;
   function timeAgo(time) {
     const currentDate = new Date();
@@ -52,5 +52,3 @@ function Description({ detail }) {
     </section>
   );
 }
-
-export default Description;

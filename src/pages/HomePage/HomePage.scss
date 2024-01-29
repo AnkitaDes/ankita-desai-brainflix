@@ -1,0 +1,11 @@
+@use "../../styles/partials/global" as *;
+@use "../../styles/partials/mixins" as *;
+
+.home {
+  &__description-next-container {
+    @include desktop {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+}

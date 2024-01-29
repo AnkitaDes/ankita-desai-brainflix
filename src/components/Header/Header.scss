@@ -23,7 +23,6 @@
     }
     @include desktop {
       padding: 1.3rem 7rem;
-      padding-bottom: 1.3rem;
     }
   }
 
@@ -71,6 +70,9 @@
       width: 14rem;
       margin-left: 2rem;
     }
+    @include desktop {
+      width: 20rem;
+    }
   }
 
   &__avatar-wrap {
@@ -81,7 +83,8 @@
       top: 2.8%;
     }
     @include desktop {
-      padding-right: 2rem;
+      right: 5%;
+      top: 3.5%;
     }
   }
 

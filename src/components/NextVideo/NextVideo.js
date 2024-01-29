@@ -19,7 +19,7 @@ function NextVideo({ videos }) {
                   alt={video.title}
                 />
               </div>
-              <div className="video__wrap">
+              <div className="next-video__wrap">
                 <p className="next-video__title">{video.title}</p>
                 <p className="next-video__channel">{video.channel}</p>
               </div>

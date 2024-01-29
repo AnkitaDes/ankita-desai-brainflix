@@ -5,10 +5,14 @@ export default function Comments({ selectedComments }) {
   const comments = selectedComments?.comments || [];
   const commentsNum = comments.length;
 
+  const handleSubmit = (event) => {
+    event.preventDefault();
+  };
+
   return (
     <section className="comments">
       <p className="comments__num">{commentsNum} Comments</p>
-      <form className="comments__form">
+      <form className="comments__form" onSubmit={handleSubmit}>
         <h2 className="comments__title">JOIN THE CONVERSATION</h2>
 
         <div className="comments__avatar-input-wrap">

@@ -10,14 +10,12 @@ export function App() {
     <div className="app">
       <BrowserRouter>
         <Header />
-        <main>
-          <Routes>
-            <Route path="/" element={<HomePage />} />
-            <Route path="/videos/:videoId" element={<HomePage />} />
-            <Route path="/upload" element={<VideoUploadPage />} />
-            <Route path="*" element={<NotFoundPage />} />
-          </Routes>
-        </main>
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/videos/:videoId" element={<HomePage />} />
+          <Route path="/upload" element={<VideoUploadPage />} />
+          <Route path="*" element={<NotFoundPage />} />
+        </Routes>
       </BrowserRouter>
     </div>
   );

@@ -31,7 +31,6 @@
   &__img-details-wrap {
     @include tablet-and-desktop {
       display: flex;
-      // justify-content: flex-start;
       gap: 1.5rem;
       padding-bottom: 1.5rem;
       border-bottom: 1px solid $secondary-mercury;

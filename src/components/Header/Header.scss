@@ -92,6 +92,7 @@
     width: 2.25rem;
     height: 2.25rem;
     border-radius: 50%;
+    aspect-ratio: 1/1;
     @include tablet-and-desktop {
       width: 2.5rem;
       height: 2.5rem;

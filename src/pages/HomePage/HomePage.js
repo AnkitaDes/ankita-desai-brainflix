@@ -16,8 +16,7 @@ export default function HomePage() {
 
   const fetchVideos = async () => {
     try {
-      const response = await axios.get(`http://localhost:8083/videos`);
-      console.log(response.data);
+      const response = await axios.get(`${REACT_APP_SERVER_URL}/videos`);
       setNextVideos(response.data);
       fetchVideoDetails(response.data[0].id);
     } catch (error) {
@@ -30,7 +29,7 @@ export default function HomePage() {
 
   const fetchVideoDetails = async (id) => {
     try {
-      const response = await axios.get(`http://localhost:8083/videos/${id}`);
+      const response = await axios.get(`${REACT_APP_SERVER_URL}/videos/${id}`);
 
       setSelectedVideo(response.data);
     } catch (error) {
@@ -45,7 +44,7 @@ export default function HomePage() {
   const sideVideos = nextVideos.filter(
     (video) => video.id !== selectedVideo.id
   );
-  console.log(sideVideos);
+
   return (
     <main className="home">
       <CurrentVideo

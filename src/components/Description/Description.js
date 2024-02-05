@@ -3,7 +3,6 @@ import viewsIcon from "../../assets/images/icons/views.svg";
 import likesIcon from "../../assets/images/icons/likes.svg";
 
 export default function Description({ detail }) {
-  const time = detail.timestamp;
   function timeAgo(time) {
     const currentDate = new Date();
     const commentDate = new Date(time);
@@ -37,11 +36,19 @@ export default function Description({ detail }) {
         </div>
         <div className="details__views-likes-wrap">
           <div className="details__views-icon-wrap">
-            <img className="details__views-icon" src={viewsIcon}></img>
+            <img
+              className="details__views-icon"
+              src={viewsIcon}
+              alt="views icon"
+            ></img>
             <p className="details__views">{detail.views}</p>
           </div>
           <div className="details__likes-icon-wrap">
-            <img className="details__likes-icon" src={likesIcon}></img>
+            <img
+              className="details__likes-icon"
+              src={likesIcon}
+              alt="likes icon"
+            ></img>
             <p className="details__likes">{detail.likes}</p>
           </div>
         </div>

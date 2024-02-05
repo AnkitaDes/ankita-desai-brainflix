@@ -8,37 +8,35 @@ import { useParams } from "react-router-dom";
 import "./HomePage.scss";
 
 export default function HomePage() {
-  const apiKey = "9755b879-c57d-4204-b1a1-6d3e0427929b";
+  const REACT_APP_SERVER_URL = process.env.REACT_APP_SERVER_URL;
+
   const [nextVideos, setNextVideos] = useState([]);
   const [selectedVideo, setSelectedVideo] = useState({});
   const { videoId } = useParams();
 
   const fetchVideos = async () => {
     try {
-      const response = await axios.get(
-        `https://project-2-api.herokuapp.com/videos/?api_key=${apiKey}`
-      );
+      const response = await axios.get(`http://localhost:8083/videos`);
+      console.log(response.data);
       setNextVideos(response.data);
       fetchVideoDetails(response.data[0].id);
     } catch (error) {
       console.error("Error fetching videos:", error);
     }
   };
+  useEffect(() => {
+    fetchVideos();
+  }, []);
 
   const fetchVideoDetails = async (id) => {
     try {
-      const response = await axios.get(
-        `https://project-2-api.herokuapp.com/videos/${id}?api_key=${apiKey}`
-      );
+      const response = await axios.get(`http://localhost:8083/videos/${id}`);
+
       setSelectedVideo(response.data);
     } catch (error) {
       console.error("Error fetching video details:", error);
     }
   };
-
-  useEffect(() => {
-    fetchVideos();
-  }, []);
 
   useEffect(() => {
     fetchVideoDetails(videoId);
@@ -47,7 +45,7 @@ export default function HomePage() {
   const sideVideos = nextVideos.filter(
     (video) => video.id !== selectedVideo.id
   );
-
+  console.log(sideVideos);
   return (
     <main className="home">
       <CurrentVideo
